@@ -1,11 +1,12 @@
 package com.github.dreamhead.moco.runner.watcher;
 
-import com.google.common.base.Function;
+import static com.github.dreamhead.moco.runner.watcher.Watchers.threadSafe;
+import static com.google.common.collect.FluentIterable.from;
+import static java.util.Arrays.asList;
 
 import java.io.File;
 
-import static com.github.dreamhead.moco.runner.watcher.Watchers.threadSafe;
-import static com.google.common.collect.FluentIterable.from;
+import com.google.common.base.Function;
 
 public abstract class AbstractWatcherFactory implements FileWatcherFactory {
     protected abstract Watcher doCreate(final File file, final Function<File, Void> listener);
@@ -27,7 +28,7 @@ public abstract class AbstractWatcherFactory implements FileWatcherFactory {
     }
 
     private Watcher doCreate(final Function<File, Void> listener, File[] files) {
-        return new CompositeWatcher(from(files).transform(new Function<File, Watcher>() {
+        return new CompositeWatcher(from(asList(files)).transform(new Function<File, Watcher>() {
             @Override
             public Watcher apply(final File file) {
                 return create(listener, file);

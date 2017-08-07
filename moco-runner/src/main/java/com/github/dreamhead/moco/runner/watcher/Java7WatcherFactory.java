@@ -5,8 +5,10 @@ import com.google.common.base.Function;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 import static com.google.common.collect.FluentIterable.from;
+import static java.util.Arrays.asList;
 
 public class Java7WatcherFactory implements FileWatcherFactory {
     private WatcherService service = new WatcherService();
@@ -23,7 +25,7 @@ public class Java7WatcherFactory implements FileWatcherFactory {
             throw new MocoException(e);
         }
 
-        return new CompositeWatcher(from(files).transform(new Function<File, Watcher>() {
+        return new CompositeWatcher(from(asList(files)).transform(new Function<File, Watcher>() {
             @Override
             public Watcher apply(final File file) {
                 return new Java7Watcher(service, listener, file);

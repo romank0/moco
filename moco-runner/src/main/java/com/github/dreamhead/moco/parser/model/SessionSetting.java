@@ -13,7 +13,7 @@ import com.github.dreamhead.moco.RestSetting;
 import com.github.dreamhead.moco.SocketServer;
 import com.github.dreamhead.moco.internal.ActualHttpServer;
 import com.github.dreamhead.moco.rest.ActualRestServer;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 import com.google.common.base.Optional;
 
 import static com.github.dreamhead.moco.Moco.log;
@@ -42,7 +42,7 @@ public class SessionSetting {
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this)
+        return Objects.toStringHelper(this)
                 .omitNullValues()
                 .add("request", request)
                 .add("response", response)

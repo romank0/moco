@@ -1,7 +1,7 @@
 package com.github.dreamhead.moco.parser.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 
 import static com.github.dreamhead.moco.util.Files.join;
 
@@ -40,7 +40,7 @@ public class GlobalSetting {
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this)
+        return Objects.toStringHelper(this)
                 .omitNullValues()
                 .add("include", include)
                 .add("context", context)

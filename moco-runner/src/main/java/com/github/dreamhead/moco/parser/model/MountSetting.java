@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.github.dreamhead.moco.ResponseHandler;
 import com.github.dreamhead.moco.mount.MountPredicate;
 import com.google.common.base.Function;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 
 import java.util.List;
 
@@ -60,7 +60,7 @@ public class MountSetting extends ResponseSetting {
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this)
+        return Objects.toStringHelper(this)
                 .omitNullValues()
                 .add("dir", dir)
                 .add("uri", uri)

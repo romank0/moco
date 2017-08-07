@@ -23,7 +23,7 @@ idea {
 subprojects {
     apply plugin: 'java'
     group = 'com.github.dreamhead'
-    version = '0.11.1-SNAPSHOT'
+    version = '0.11.1-guava15'
     sourceCompatibility = JavaVersion.VERSION_1_7
     targetCompatibility = JavaVersion.VERSION_1_7
 
@@ -72,7 +72,7 @@ subprojects {
     }
 
     project.ext {
-        guavaVersion = '20.0'
+        guavaVersion = '15.0'
         nettyVersion = '4.1.13.Final'
         slf4jVersion = '1.7.25'
         commonsIoVersion = '2.5'

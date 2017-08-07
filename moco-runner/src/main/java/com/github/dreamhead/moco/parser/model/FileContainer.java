@@ -3,7 +3,7 @@ package com.github.dreamhead.moco.parser.model;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.github.dreamhead.moco.parser.deserializer.FileContainerDeserializer;
 import com.github.dreamhead.moco.resource.ContentResource;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 import com.google.common.base.Optional;
 
 import java.nio.charset.Charset;
@@ -111,7 +111,7 @@ public final class FileContainer extends TextContainer {
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this)
+        return Objects.toStringHelper(this)
                 .omitNullValues()
                 .add("name", name)
                 .add("charset", charset)

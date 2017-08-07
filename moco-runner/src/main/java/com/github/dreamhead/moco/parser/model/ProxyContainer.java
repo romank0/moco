@@ -6,7 +6,7 @@ import com.github.dreamhead.moco.ResponseHandler;
 import com.github.dreamhead.moco.handler.failover.Failover;
 import com.github.dreamhead.moco.handler.proxy.ProxyConfig;
 import com.github.dreamhead.moco.parser.deserializer.ProxyContainerDeserializer;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 
 import static com.github.dreamhead.moco.Moco.failover;
 import static com.github.dreamhead.moco.Moco.playback;
@@ -28,7 +28,7 @@ public class ProxyContainer {
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(ProxyContainer.class)
+        return Objects.toStringHelper(ProxyContainer.class)
                 .omitNullValues()
                 .add("url", this.url)
                 .add("from", this.from)

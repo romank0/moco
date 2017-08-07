@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.github.dreamhead.moco.Moco;
 import com.github.dreamhead.moco.parser.deserializer.LatencyContainerDeserializer;
 import com.github.dreamhead.moco.procedure.LatencyProcedure;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,7 +15,7 @@ public class LatencyContainer {
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this)
+        return Objects.toStringHelper(this)
                 .omitNullValues()
                 .add("latency", latency)
                 .add("unit", unit)

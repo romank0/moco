@@ -3,7 +3,7 @@ package com.github.dreamhead.moco.parser.model;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.github.dreamhead.moco.ResponseHandler;
 import com.github.dreamhead.moco.parser.ResponseHandlerFactory;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 
 import java.util.Map;
 
@@ -39,7 +39,7 @@ public class ResponseSetting extends BaseResourceSetting {
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this)
+        return Objects.toStringHelper(this)
                 .omitNullValues()
                 .add("text", text)
                 .add("file", file)

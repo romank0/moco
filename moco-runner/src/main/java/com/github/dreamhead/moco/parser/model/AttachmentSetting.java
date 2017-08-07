@@ -1,7 +1,7 @@
 package com.github.dreamhead.moco.parser.model;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class AttachmentSetting extends BaseResourceSetting {
@@ -13,7 +13,7 @@ public class AttachmentSetting extends BaseResourceSetting {
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this)
+        return Objects.toStringHelper(this)
                 .omitNullValues()
                 .add("filename", filename)
                 .add("text", text)

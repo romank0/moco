@@ -2,7 +2,7 @@ package com.github.dreamhead.moco.parser.model;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.github.dreamhead.moco.MocoEventAction;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 
 import static com.github.dreamhead.moco.Moco.post;
 
@@ -17,7 +17,7 @@ public class PostSetting {
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this)
+        return Objects.toStringHelper(this)
                 .omitNullValues()
                 .add("url", url)
                 .add("content", content)
